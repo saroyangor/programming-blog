@@ -1,5 +1,6 @@
 import React from 'react';
 
+import {ThemeSwitcher} from "widgets/ThemeSwitcher";
 import {classNames} from "shared/lib";
 import {AppLink, AppLinkTheme} from "shared/ui";
 
@@ -14,6 +15,7 @@ export const Navbar = (props: NavbarProps) => {
 
     return (
         <div className={classNames(cls.Navbar, [className])}>
+            <ThemeSwitcher />
             <div className={cls.links}>
                 <AppLink to={'/'} theme={AppLinkTheme.SECONDARY}>
                     Main
