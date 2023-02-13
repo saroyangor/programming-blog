@@ -54,7 +54,7 @@ module.exports = {
         pathGroupsExcludedImportTypes: [],
         pathGroups: [
           {
-            pattern: 'src/*',
+            pattern: '@/**',
             group: 'internal',
           },
         ],

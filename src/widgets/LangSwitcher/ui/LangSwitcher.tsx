@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib';
-import { Button, ThemeButton } from 'shared/ui';
+
+import { classNames } from '@/shared/lib';
+import { Button, ThemeButton } from '@/shared/ui';
 
 import cls from './LangSwitcher.module.scss';
 

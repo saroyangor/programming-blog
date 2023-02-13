@@ -1,6 +1,7 @@
 import React from 'react';
-import { classNames } from 'shared/lib';
-import { AppLink, AppLinkTheme } from 'shared/ui';
+
+import { classNames } from '@/shared/lib';
+import { AppLink, AppLinkTheme } from '@/shared/ui';
 
 import cls from './Navbar.module.scss';
 
