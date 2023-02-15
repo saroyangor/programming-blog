@@ -23,7 +23,7 @@ module.exports = {
     'i18next',
   ],
   rules: {
-    'max-len': [2, { ignoreComments: true }],
+    'max-len': [2, { ignoreComments: true, code: 120 }],
     'import/no-extraneous-dependencies': 1,
     'no-shadow': 0,
     'react/jsx-props-no-spreading': 1,
