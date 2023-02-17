@@ -52,7 +52,7 @@ module.exports = {
     camelcase: 'off',
     'import/prefer-default-export': 0,
     'import/extensions': 0,
-    'i18next/no-literal-string': [2, { markupOnly: true }],
+    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'import/order': [
       'error',
       {
@@ -78,4 +78,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 0,
+      },
+    },
+  ],
 };
