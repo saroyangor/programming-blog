@@ -4,11 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,13 +13,12 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
-    'max-len': [2, { ignoreComments: true, code: 120 }],
+    'max-len': [2, {
+      ignoreComments: true,
+      code: 120,
+    }],
     'import/no-extraneous-dependencies': 1,
     'no-shadow': 0,
     'react/jsx-props-no-spreading': 1,
@@ -52,38 +47,27 @@ module.exports = {
     camelcase: 'off',
     'import/prefer-default-export': 0,
     'import/extensions': 0,
-    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid'] }],
-    'import/order': [
-      'error',
-      {
-        pathGroupsExcludedImportTypes: [],
-        pathGroups: [
-          {
-            pattern: '@/**',
-            group: 'internal',
-          },
-        ],
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-        ],
-        'newlines-between': 'always',
-      },
-    ],
+    'i18next/no-literal-string': [2, {
+      markupOnly: true,
+      ignoreAttribute: ['data-testid', 'to'],
+    }],
+    'import/order': ['error', {
+      pathGroupsExcludedImportTypes: [],
+      pathGroups: [{
+        pattern: '@/**',
+        group: 'internal',
+      }],
+      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+      'newlines-between': 'always',
+    }],
   },
   globals: {
     __IS_DEV__: true,
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 0,
-      },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 0,
     },
-  ],
+  }],
 };
