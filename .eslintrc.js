@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
+    'linebreak-style': [2, 'windows'],
     'max-len': [2, {
       ignoreComments: true,
       code: 120,
