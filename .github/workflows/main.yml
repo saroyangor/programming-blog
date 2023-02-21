@@ -27,9 +27,9 @@ jobs:
         run: npm run lint:scss
       - name: unit testing
         run: npm run test:unit
-      - name: update loki
-        run: npx loki update
       - name: build storybook
         run: npm run storybook:build
+      - name: update loki
+        run: npx loki update
       - name: screenshot testing
         run: npm run test:ui:ci
