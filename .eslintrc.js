@@ -24,7 +24,7 @@ module.exports = {
     'no-shadow': 0,
     'react/jsx-props-no-spreading': 1,
     'no-underscore-dangle': 0,
-    'no-unused-vars': 1,
+    'no-unused-vars': 0,
     semi: [2, 'always'],
     'import/no-unresolved': 0,
     'react/jsx-uses-react': 0,
