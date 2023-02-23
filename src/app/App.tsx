@@ -6,7 +6,6 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { classNames } from '@/shared/lib';
 
 import { useTheme } from './providers/themeProvider';
-import './styles/index.scss';
 
 const App = () => {
   const { theme } = useTheme();

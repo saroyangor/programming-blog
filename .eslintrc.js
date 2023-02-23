@@ -13,8 +13,15 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+  ],
   rules: {
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 2,
     'linebreak-style': [2, 'windows'],
     'max-len': [2, {
       ignoreComments: true,
@@ -66,9 +73,10 @@ module.exports = {
     __IS_DEV__: true,
   },
   overrides: [{
-    files: ['**/src/**/*.test.{ts,tsx}'],
+    files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
     rules: {
       'i18next/no-literal-string': 0,
+      'max-len': 0,
     },
   }],
 };
