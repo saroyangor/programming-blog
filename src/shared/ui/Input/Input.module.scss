@@ -1,0 +1,21 @@
+.InputWrapper {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.placeholder {
+  white-space: nowrap;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
