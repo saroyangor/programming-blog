@@ -29,7 +29,6 @@ export const DefaultDark = Template.bind({});
 DefaultDark.args = {
   isOpen: true,
 };
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
-DefaultDark.decorators.push(StoreDecorator({
+DefaultDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   loginForm: { username: '123', password: 'asd' },
-}));
+})];
