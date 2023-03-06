@@ -1,10 +1,9 @@
 import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from '@/shared/lib';
+import { classNames, useAppDispatch, DynamicModuleLoader, ReducersList } from '@/shared/lib';
 import { Button, ButtonTheme, Input, Text, TextTheme } from '@/shared/ui';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -16,7 +15,8 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLo
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
-    className?: string
+  className?: string
+  onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -24,10 +24,10 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm = memo((props: LoginFormProps) => {
-  const { className } = props;
+  const { className, onSuccess } = props;
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const error = useSelector(getLoginError);
@@ -41,12 +41,16 @@ const LoginForm = memo((props: LoginFormProps) => {
     dispatch(loginActions.setPassword(str));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({
       username,
       password,
     }));
-  }, [dispatch, password, username]);
+
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, onSuccess, password, username]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
