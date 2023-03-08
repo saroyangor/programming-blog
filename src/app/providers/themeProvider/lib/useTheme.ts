@@ -18,7 +18,7 @@ export const useTheme = (): UseThemeResult => {
   };
 
   return {
-    theme: Theme.LIGHT,
+    theme: theme || Theme.LIGHT,
     toggleTheme,
   };
 };
