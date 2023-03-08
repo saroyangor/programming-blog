@@ -1,14 +1,22 @@
-import { ReactNode, MouseEvent, useState, useRef, useEffect, useCallback } from 'react';
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  ReactNode,
+  MouseEvent,
+  MutableRefObject,
+} from 'react';
 
-import { classNames } from '@/shared/lib';
+import { classNames, Mods } from '@/shared/lib';
 import { Portal } from '@/shared/ui/Portal/Portal';
 
 import cls from './Modal.module.scss';
 
 interface ModalProps {
   className?: string
-  children: ReactNode
-  isOpen: boolean
+  children?: ReactNode
+  isOpen?: boolean
   onClose?: () => void
   lazy?: boolean
 }
@@ -26,7 +34,7 @@ export const Modal = (props: ModalProps) => {
 
   const [isClosing, setClosing] = useState(false);
   const [isMounted, setMounted] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout>>() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   useEffect(() => {
     if (isOpen) {
@@ -65,7 +73,7 @@ export const Modal = (props: ModalProps) => {
     };
   }, [isOpen, onKeyDown]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
   };

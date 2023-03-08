@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 

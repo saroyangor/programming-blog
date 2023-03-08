@@ -20,6 +20,7 @@ module.exports = {
     'react-hooks',
   ],
   rules: {
+    'no-undef': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 2,
     'linebreak-style': [2, 'windows'],
@@ -71,6 +72,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

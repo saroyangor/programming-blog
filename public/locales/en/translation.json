@@ -12,6 +12,5 @@
   "Войти": "Login",
   "Вы ввели неверный логин или пароль": "Uncorrect username or password",
   "Форма авторизации": "Auth form",
-  "Выйти": "Logout",
-  "Профиль": "Profile"
+  "Выйти": "Logout"
 }
