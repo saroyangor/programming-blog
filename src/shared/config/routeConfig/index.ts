@@ -1,5 +1,5 @@
 export {
   AppRoutes,
   RoutePath,
-  routeConfig
+  routeConfig,
 } from './routeConfig';
