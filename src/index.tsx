@@ -1,5 +1,7 @@
-function cnlog(str: string): string {
-  return str + "!!!"
-}
+import {render} from "react-dom";
+import Counter from "./components/Counter";
 
-console.log(cnlog('1234'))
+render(
+  <Counter />,
+  document.getElementById('root')
+)
