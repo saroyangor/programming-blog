@@ -1,0 +1,25 @@
+{
+  "Главная страница": "Main Page",
+  "Главная": "Main",
+  "Язык": "English",
+  "Короткий язык": "En",
+  "Страница не найдена": "Page not found",
+  "Обновить страницу": "Refresh the page",
+  "Произошла непредвиденная ошибка": "An unexpected error occurred",
+  "Имя пользователя": "Username",
+  "Пароль": "Password",
+  "Войти": "Login",
+  "Выйти": "Logout",
+  "Форма авторизации": "Auth form",
+  "Вы ввели неверный логин или пароль": "Uncorrect username or password",
+  "Отмена": "Cancel",
+  "Сохранить": "Save",
+
+  "О сайте": "About us",
+
+  "Профиль": "Profile",
+  "Редактировать": "Edit",
+  "Ваше имя": "Your name",
+  "Ваша фамилия": "Your surname",
+  "Произошла ошибка при загрузке профиля": "An error occurred when loading the profile"
+}

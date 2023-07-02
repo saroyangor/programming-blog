@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 
@@ -51,6 +52,7 @@ export const Sidebar = memo((props: SidebarProps) => {
 
       <div className={cls.switchers}>
         <ThemeSwitcher />
+        <LangSwitcher className={cls.lang} short={collapsed} />
       </div>
     </div>
   );
