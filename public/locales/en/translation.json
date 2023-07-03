@@ -21,5 +21,6 @@
   "Редактировать": "Edit",
   "Ваше имя": "Your name",
   "Ваша фамилия": "Your surname",
-  "Произошла ошибка при загрузке профиля": "An error occurred when loading the profile"
+  "Произошла ошибка при загрузке профиля": "An error occurred when loading the profile",
+  "выдать ошибку": "throw error"
 }
