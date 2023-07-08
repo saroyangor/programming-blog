@@ -4,6 +4,7 @@ import { NavigateOptions } from 'react-router';
 import { AxiosInstance } from 'axios';
 
 import { UserSchema } from '@/entities/User';
+import { ProfileSchema } from '@/entities/Profile';
 import { LoginSchema } from '@/features/AuthByUsername';
 
 export interface StateSchema {
@@ -11,6 +12,7 @@ export interface StateSchema {
 
   // Async reducers
   loginForm?: LoginSchema
+  profile?: ProfileSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
