@@ -2,7 +2,6 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import avatarImg from '@/shared/assets/tests/avatar.webp';
 
 import { ProfileCard } from './ProfileCard';
 
@@ -26,7 +25,7 @@ Default.args = {
     lastname: 'Saroyan',
     currency: Currency.USD,
     city: 'Yerevan',
-    avatar: avatarImg,
+    avatar: 'https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg',
   },
 };
 
