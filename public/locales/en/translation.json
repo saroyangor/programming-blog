@@ -21,6 +21,12 @@
   "Редактировать": "Edit",
   "Ваше имя": "Your name",
   "Ваша фамилия": "Your surname",
+  "Ваш возраст": "Your age",
+  "Ваш город": "Your city",
+  "Ваше имя пользователя": "Your username",
+  "Ваш аватар": "Your avatar",
+  "Ваша валюта": "Your currency",
+  "Ваша страна": "Your country",
   "Произошла ошибка при загрузке профиля": "An error occurred when loading the profile",
   "выдать ошибку": "throw error"
 }

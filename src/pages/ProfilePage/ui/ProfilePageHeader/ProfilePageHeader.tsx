@@ -2,10 +2,10 @@ import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { getProfileReadonly, profileActions } from '@/entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from '@/entities/Profile';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
-import { Button } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Text } from '@/shared/ui/Text';
 
 import cls from './ProfilePageHeader.module.scss';
@@ -29,6 +29,10 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     dispatch(profileActions.cancelEdit());
   }, [dispatch]);
 
+  const onSave = useCallback(() => {
+    dispatch(updateProfileData());
+  }, [dispatch]);
+
   return (
     <div className={classNames(cls.ProfilePageHeader, [className])}>
       <Text title={t('Профиль')} />
@@ -38,10 +42,13 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
         </Button>
       ) : (
         <div className={cls.buttons}>
-          <Button onClick={onCancelEdit}>
+          <Button
+            onClick={onCancelEdit}
+            theme={ButtonTheme.OUTLINE_RED}
+          >
             {t('Отмена')}
           </Button>
-          <Button>
+          <Button onClick={onSave}>
             {t('Сохранить')}
           </Button>
         </div>

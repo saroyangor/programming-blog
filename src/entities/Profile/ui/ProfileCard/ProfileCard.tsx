@@ -1,10 +1,13 @@
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from '@/shared/lib/classNames';
-import { Loader } from '@/shared/ui/Loader';
+import { classNames, Mods } from '@/shared/lib/classNames';
 import { Text, TextTheme } from '@/shared/ui/Text';
+import { Loader } from '@/shared/ui/Loader';
 import { Button } from '@/shared/ui/Button';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Input } from '@/shared/ui/Input';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
 
 import { Profile } from '../../model/types/profile';
 
@@ -18,6 +21,12 @@ interface ProfileCardProps {
   readonly?: boolean
   onChangeFirstname?: (value?: string) => void
   onChangeLastname?: (value?: string) => void
+  onChangeAge?: (value?: string) => void
+  onChangeCity?: (value?: string) => void
+  onChangeUsername?: (value?: string) => void
+  onChangeAvatar?: (value?: string) => void
+  onChangeCurrency?: (currency: Currency) => void
+  onChangeCountry?: (country: Country) => void
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -29,6 +38,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
     readonly,
     onChangeLastname,
     onChangeFirstname,
+    onChangeAge,
+    onChangeCity,
+    onChangeUsername,
+    onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
   } = props;
   const { t } = useTranslation();
 
@@ -61,21 +76,62 @@ export const ProfileCard = (props: ProfileCardProps) => {
     );
   }
 
+  const mods: Mods = {
+    [cls.editing]: !readonly,
+  };
+
   return (
-    <div className={classNames(cls.ProfileCard, [className])}>
+    <div className={classNames(cls.ProfileCard, [className], mods)}>
       <div className={cls.data}>
-        <Input
-          value={data?.first}
-          placeholder={t('Ваше имя')}
-          onChange={onChangeFirstname}
-          readonly={readonly}
-        />
-        <Input
-          value={data?.lastname}
-          placeholder={t('Ваша фамилия')}
-          onChange={onChangeLastname}
-          readonly={readonly}
-        />
+        {data?.avatar && <Avatar src={data?.avatar} alt={data?.username} />}
+        <div className={cls.inputs}>
+          <Input
+            value={data?.first}
+            placeholder={t('Ваше имя')}
+            onChange={onChangeFirstname}
+            readonly={readonly}
+          />
+          <Input
+            value={data?.lastname}
+            placeholder={t('Ваша фамилия')}
+            onChange={onChangeLastname}
+            readonly={readonly}
+          />
+          <Input
+            value={data?.age}
+            placeholder={t('Ваш возраст')}
+            onChange={onChangeAge}
+            readonly={readonly}
+          />
+          <Input
+            value={data?.city}
+            placeholder={t('Ваш город')}
+            onChange={onChangeCity}
+            readonly={readonly}
+          />
+          <Input
+            value={data?.username}
+            placeholder={t('Ваше имя пользователя')}
+            onChange={onChangeUsername}
+            readonly={readonly}
+          />
+          <Input
+            value={data?.avatar}
+            placeholder={t('Ваш аватар')}
+            onChange={onChangeAvatar}
+            readonly={readonly}
+          />
+          <CurrencySelect
+            value={data?.currency}
+            onChange={onChangeCurrency}
+            readonly={readonly}
+          />
+          <CountrySelect
+            value={data?.country}
+            onChange={onChangeCountry}
+            readonly={readonly}
+          />
+        </div>
       </div>
     </div>
   );

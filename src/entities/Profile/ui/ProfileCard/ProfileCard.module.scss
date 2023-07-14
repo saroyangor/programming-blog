@@ -5,8 +5,19 @@
 
 .data {
   display: flex;
+  gap: 20px;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.inputs {
+  display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-grow: 1;
 }
 
 .loading,
@@ -21,4 +32,8 @@
   flex-direction: column;
   gap: 20px;
   text-align: center;
+}
+
+.editing {
+  border-color: var(--inverted-primary-color);
 }
