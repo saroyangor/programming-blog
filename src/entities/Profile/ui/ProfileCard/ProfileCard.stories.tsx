@@ -1,7 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatarImg from '@/shared/assets/tests/avatar.webp';
@@ -31,21 +29,6 @@ Default.args = {
     avatar: avatarImg,
   },
 };
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
-  data: {
-    username: 'admin',
-    age: 24,
-    country: Country.Armenia,
-    first: 'Gor',
-    lastname: 'Saroyan',
-    currency: Currency.USD,
-    city: 'Yerevan',
-    avatar: avatarImg,
-  },
-};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Loading = Template.bind({});
 Loading.args = {

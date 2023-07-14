@@ -1,9 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-
 import { CountrySelect } from './CountrySelect';
 
 export default {
@@ -21,7 +18,3 @@ const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect 
 
 export const Default = Template.bind({});
 Default.args = {};
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];

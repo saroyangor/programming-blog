@@ -1,9 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-
 import { CurrencySelect } from './CurrencySelect';
 
 export default {
@@ -21,7 +18,3 @@ const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelec
 
 export const Default = Template.bind({});
 Default.args = {};
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
