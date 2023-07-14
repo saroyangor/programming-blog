@@ -28,5 +28,12 @@
   "Ваша валюта": "Your currency",
   "Ваша страна": "Your country",
   "Произошла ошибка при загрузке профиля": "An error occurred when loading the profile",
-  "выдать ошибку": "throw error"
+  "выдать ошибку": "throw error",
+  "Серверная ошибка при сохранении": "Server error on save",
+  "Данные не указаны": "No data",
+  "Некорректная ссылка на аватар": "Uncorrect URL for avatar",
+  "Имя пользователя обязательна": "Username required",
+  "Город обязателен": "City required",
+  "Возраст обязателен": "Age required",
+  "Имя и фамилия обязательны": "Name and Surname required"
 }
