@@ -35,5 +35,7 @@
   "Имя пользователя обязательна": "Username required",
   "Город обязателен": "City required",
   "Возраст обязателен": "Age required",
-  "Имя и фамилия обязательны": "Name and Surname required"
+  "Имя и фамилия обязательны": "Name and Surname required",
+
+  "Статьи": "Articles"
 }
