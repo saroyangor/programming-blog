@@ -1,5 +1,7 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
+import avatar from '@/shared/assets/tests/avatar.webp';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
@@ -15,25 +17,26 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   data: {
     username: 'admin',
-    age: 24,
-    country: Country.Armenia,
-    first: 'Gor',
-    lastname: 'Saroyan',
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
     currency: Currency.USD,
-    city: 'Yerevan',
+    avatar,
   },
-};
-
-export const Loading = Template.bind({});
-Loading.args = {
-  isLoading: true,
 };
 
 export const withError = Template.bind({});
 withError.args = {
   error: 'true',
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  isLoading: true,
 };

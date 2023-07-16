@@ -1,9 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Theme } from '@/app/providers/ThemeProvider';
-
-import { ThemeDecorator } from '../../config/storybook/ThemeDecorator';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { Select } from './Select';
 
@@ -19,21 +15,9 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Select',
+  label: 'Укажите значение',
   options: [
-    { value: '1', content: 'First option' },
-    { value: '2', content: 'Second option' },
-    { value: '3', content: 'Third option' },
+    { value: '123', content: 'Первый пункт' },
+    { value: '1234', content: 'Второй пункт' },
   ],
 };
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {
-  label: 'Select',
-  options: [
-    { value: '1', content: 'First option' },
-    { value: '2', content: 'Second option' },
-    { value: '3', content: 'Third option' },
-  ],
-};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];

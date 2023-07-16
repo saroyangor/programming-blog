@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { CountrySelect } from './CountrySelect';
 
@@ -8,9 +8,6 @@ export default {
   component: CountrySelect,
   argTypes: {
     backgroundColor: { control: 'color' },
-  },
-  args: {
-    to: '/',
   },
 } as ComponentMeta<typeof CountrySelect>;
 

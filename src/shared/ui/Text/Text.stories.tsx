@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 
 import { ThemeDecorator } from '../../config/storybook/ThemeDecorator';
 
-import { Text, TextTheme } from './Text';
+import { Text, TextTheme, TextSize } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -17,18 +17,18 @@ export default {
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
-export const Defalut = Template.bind({});
-Defalut.args = {
+export const Default = Template.bind({});
+Default.args = {
   title: 'Lorem ipsum',
   text: 'Lorem ipsum dolor',
 };
 
-export const DefalutDark = Template.bind({});
-DefalutDark.args = {
+export const DefaultDark = Template.bind({});
+DefaultDark.args = {
   title: 'Lorem ipsum',
   text: 'Lorem ipsum dolor',
 };
-DefalutDark.decorators = [ThemeDecorator(Theme.DARK)];
+DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 export const OnlyText = Template.bind({});
 OnlyText.args = {
   text: 'Lorem ipsum',
@@ -54,4 +54,11 @@ Error.args = {
   title: 'Lorem ipsum',
   text: 'Lorem ipsum dolor',
   theme: TextTheme.ERROR,
+};
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+  title: 'Title lorem ipsun',
+  text: 'Description Description Description Description',
+  size: TextSize.L,
 };
