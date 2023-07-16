@@ -6,6 +6,7 @@ import { AxiosInstance } from 'axios';
 import { UserSchema } from '@/entities/User';
 import { ProfileSchema } from '@/entities/Profile';
 import { LoginSchema } from '@/features/AuthByUsername';
+import { ArticleDetailsSchema } from '@/entities/Article';
 
 export interface StateSchema {
   user: UserSchema
@@ -13,6 +14,7 @@ export interface StateSchema {
   // Async reducers
   loginForm?: LoginSchema
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
