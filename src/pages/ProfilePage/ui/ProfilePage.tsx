@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
 
 import {
   fetchProfileData,
@@ -42,6 +43,10 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
 
+  const { id } = useParams<{ id: string }>();
+
+  const dispatch = useAppDispatch();
+
   const validateErrorTranslates = {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и фамилия обязательны'),
     [ValidateProfileError.INCORRECT_AGE]: t('Возраст обязателен'),
@@ -52,11 +57,11 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
   };
 
-  const dispatch = useAppDispatch();
-
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
-  }, [dispatch]);
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
+  }, [dispatch, id]);
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -93,7 +98,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
   }, [dispatch]);
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={classNames('', [className])}>
         <ProfilePageHeader />
         {

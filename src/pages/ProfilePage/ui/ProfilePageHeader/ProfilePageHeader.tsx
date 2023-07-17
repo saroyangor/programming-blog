@@ -2,7 +2,13 @@ import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { getProfileReadonly, profileActions, updateProfileData } from '@/entities/Profile';
+import {
+  getProfileData,
+  getProfileReadonly,
+  updateProfileData,
+  profileActions,
+} from '@/entities/Profile';
+import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -21,6 +27,10 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 
   const readonly = useSelector(getProfileReadonly);
 
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const mayEdit = authData?.id === profileData?.id;
+
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false));
   }, [dispatch]);
@@ -38,23 +48,24 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   return (
     <div className={classNames(cls.ProfilePageHeader, [className])}>
       <Text title={t('Профиль')} />
-      {readonly ? (
-        <Button onClick={onEdit}>
-          {t('Редактировать')}
-        </Button>
-      ) : (
-        <div className={cls.buttons}>
-          <Button
-            onClick={onCancelEdit}
-            theme={ButtonTheme.OUTLINE_RED}
-          >
-            {t('Отмена')}
+      {mayEdit && (
+        readonly ? (
+          <Button onClick={onEdit}>
+            {t('Редактировать')}
           </Button>
-          <Button onClick={onSave}>
-            {t('Сохранить')}
-          </Button>
-        </div>
-      )}
+        ) : (
+          <div className={cls.buttons}>
+            <Button
+              onClick={onCancelEdit}
+              theme={ButtonTheme.OUTLINE_RED}
+            >
+              {t('Отмена')}
+            </Button>
+            <Button onClick={onSave}>
+              {t('Сохранить')}
+            </Button>
+          </div>
+        ))}
     </div>
   );
 };
