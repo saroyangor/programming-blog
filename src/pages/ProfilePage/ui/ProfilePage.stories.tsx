@@ -21,6 +21,7 @@ export const Light = Template.bind({});
 Light.args = {};
 Light.decorators = [StoreDecorator({
   profile: {
+    readonly: true,
     form: {
       username: 'admin',
       age: 24,

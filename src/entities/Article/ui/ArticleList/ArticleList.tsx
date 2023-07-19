@@ -17,8 +17,9 @@ interface ArticleListProps {
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
   .fill(0)
-  .map((item) => (
-    <ArticleListItemSkeleton className={cls.card} key={item} view={view} />
+  .map((item, index) => (
+    // eslint-disable-next-line react/no-array-index-key
+    <ArticleListItemSkeleton className={cls.card} key={item + index} view={view} />
   ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
