@@ -108,6 +108,12 @@
       "userId": "1",
       "text": "Hello World!",
       "id": "8mEAcZg"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Hello everyone!",
+      "id": "PK9mSwr"
     }
   ],
   "users": [

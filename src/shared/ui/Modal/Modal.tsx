@@ -8,6 +8,7 @@ import {
   MutableRefObject,
 } from 'react';
 
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames, Mods } from '@/shared/lib/classNames';
 import { Portal } from '@/shared/ui/Portal';
 
@@ -35,6 +36,7 @@ export const Modal = (props: ModalProps) => {
   const [isClosing, setClosing] = useState(false);
   const [isMounted, setMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (isOpen) {
@@ -84,7 +86,7 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div className={classNames(cls.Modal, [className], mods)}>
+      <div className={classNames(cls.Modal, [className, theme, 'app_modal'], mods)}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}
