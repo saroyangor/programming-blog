@@ -22,6 +22,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect';
+import { Page } from '@/shared/ui/Page';
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -99,7 +100,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames('', [className])}>
+      <Page className={classNames('', [className])}>
         <ProfilePageHeader />
         {
           validateErrors?.length && validateErrors.map((err) => (
@@ -120,7 +121,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
           onChangeCurrency={onChangeCurrency}
           onChangeCountry={onChangeCountry}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });

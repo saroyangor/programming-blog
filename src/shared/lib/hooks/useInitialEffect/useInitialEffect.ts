@@ -6,5 +6,5 @@ export function useInitialEffect(callback: () => void, deps?: DependencyList | u
       callback();
     }
     // eslint-disable-next-line
-    }, deps);
+  }, deps);
 }

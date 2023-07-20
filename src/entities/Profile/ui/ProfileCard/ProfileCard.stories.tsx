@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import avatar from '@/shared/assets/tests/avatar.webp';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
@@ -17,8 +16,8 @@ export default {
 
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   data: {
     username: 'admin',
     age: 22,
@@ -27,7 +26,6 @@ Primary.args = {
     first: 'asd',
     city: 'asf',
     currency: Currency.USD,
-    avatar,
   },
 };
 

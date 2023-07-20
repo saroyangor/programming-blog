@@ -13,6 +13,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { Text } from '@/shared/ui/Text';
 import { Button } from '@/shared/ui/Button';
 import { RoutePath } from '@/shared/config/routeConfig';
+import { Page } from '@/shared/ui/Page';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
@@ -55,15 +56,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.ArticleDetailsPage, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, [className])}>
         {t('Статья не найдена')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetailsPage, [className])}>
+      <Page className={classNames(cls.ArticleDetailsPage, [className])}>
         <Button onClick={onBackToList}>
           {t('Назад к списку')}
         </Button>
@@ -74,7 +75,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           isLoading={commentsIsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
