@@ -13,7 +13,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/Dynam
 import { Text } from '@/shared/ui/Text';
 import { Button } from '@/shared/ui/Button';
 import { RoutePath } from '@/shared/config/routeConfig';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/widgets/Page';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
