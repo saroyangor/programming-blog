@@ -8,6 +8,9 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData, userActions } from '@/entities/User';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig';
 
 import cls from './Navbar.module.scss';
 
@@ -39,6 +42,18 @@ export const Navbar = memo((props: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, [className])}>
+        <Text
+          className={cls.appName}
+          title={t('Programming blog')}
+          theme={TextTheme.INVERTED}
+        />
+        <AppLink
+          to={RoutePath.article_create}
+          theme={AppLinkTheme.SECONDARY}
+          className={cls.createBtn}
+        >
+          {t('Создать статью')}
+        </AppLink>
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           className={cls.links}

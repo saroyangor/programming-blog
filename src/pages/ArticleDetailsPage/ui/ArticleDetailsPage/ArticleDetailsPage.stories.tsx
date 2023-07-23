@@ -57,9 +57,9 @@ const article: Article = {
   ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
+export const Default = Template.bind({});
+Default.args = {};
+Default.decorators = [StoreDecorator({
   articleDetails: {
     data: article,
   },

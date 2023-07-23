@@ -59,5 +59,9 @@
   "Наука": "Science",
   "Поиск": "Search",
   "Статьи не найдены": "Articles is not found",
-  "Рекомендуем": "Recommended"
+  "Рекомендуем": "Recommended",
+  "Редактирование статьи с ID = ": "Edit articles with ID = ",
+  "Создание новой статьи": "Create new article",
+  "Создать статью": "Create article",
+  "Programming blog": "Programming blog"
 }
