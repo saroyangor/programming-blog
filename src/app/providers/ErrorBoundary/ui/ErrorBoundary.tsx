@@ -3,11 +3,11 @@ import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { ErrorPage } from '@/widgets/ErrorPage';
 
 interface ErrorBoundaryProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 interface ErrorBoundaryState {
-  hasError: boolean;
+  hasError: boolean
 }
 
 export class ErrorBoundary

@@ -7,9 +7,9 @@ import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '../../model/types/article';
 
 interface ArticleTypeTabsProps {
-    className?: string;
-    value: ArticleType;
-    onChangeType: (type: ArticleType) => void;
+    className?: string
+    value: ArticleType
+    onChangeType: (type: ArticleType) => void
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {

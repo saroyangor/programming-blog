@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames';
 import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
-    className?: string;
+    className?: string
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {

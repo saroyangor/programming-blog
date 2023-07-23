@@ -31,7 +31,7 @@ import {
 import cls from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
-  className?: string;
+  className?: string
 }
 
 const reducers: ReducersList = {

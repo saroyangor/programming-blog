@@ -7,8 +7,8 @@ import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
 import cls from './Code.module.scss';
 
 interface CodeProps {
-    className?: string;
-    text: string;
+    className?: string
+    text: string
 }
 
 export const Code = memo((props: CodeProps) => {

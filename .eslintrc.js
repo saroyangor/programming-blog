@@ -60,7 +60,7 @@ module.exports = {
     'import/extensions': 0,
     'i18next/no-literal-string': [2, {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target', 'direction', 'justify', 'align', 'gap'],
+      ignoreAttribute: ['data-testid', 'to', 'target', 'direction', 'justify', 'align', 'gap', 'role'],
     }],
     'import/order': ['error', {
       pathGroupsExcludedImportTypes: [],

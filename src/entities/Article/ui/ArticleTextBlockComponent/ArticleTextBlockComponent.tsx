@@ -8,8 +8,8 @@ import { ArticleTextBlock } from '../../model/types/article';
 import cls from './ArticleTextBlockComponent.module.scss';
 
 interface ArticleTextBlockComponentProps {
-  className?: string;
-  block: ArticleTextBlock;
+  className?: string
+  block: ArticleTextBlock
 }
 
 export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {

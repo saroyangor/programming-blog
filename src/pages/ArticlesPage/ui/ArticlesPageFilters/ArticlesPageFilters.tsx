@@ -26,7 +26,7 @@ import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPageFilters.module.scss';
 
 interface ArticlesPageFiltersProps {
-    className?: string;
+    className?: string
 }
 
 export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {

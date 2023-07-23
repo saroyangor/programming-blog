@@ -12,7 +12,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
-    className?: string;
+    className?: string
 }
 
 export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {

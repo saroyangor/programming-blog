@@ -10,9 +10,9 @@ export enum CardTheme {
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-    className?: string;
-    children: ReactNode;
-    theme?: CardTheme;
+    className?: string
+    children: ReactNode
+    theme?: CardTheme
 }
 
 export const Card = memo((props: CardProps) => {

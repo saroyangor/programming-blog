@@ -30,12 +30,22 @@
   text-align: left;
 }
 
+.right {
+  text-align: right;
+}
+
 .center {
   text-align: center;
 }
 
-.right {
-  text-align: right;
+.size_s {
+  .title {
+    font: var(--font-m);
+  }
+
+  .text {
+    font: var(--font-s);
+  }
 }
 
 .size_m {

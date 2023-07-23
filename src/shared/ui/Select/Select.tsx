@@ -5,17 +5,17 @@ import { classNames } from '@/shared/lib/classNames';
 import cls from './Select.module.scss';
 
 export interface SelectOption<T extends string> {
-    value: T;
-    content: string;
+    value: T
+    content: string
 }
 
 interface SelectProps<T extends string> {
-    className?: string;
-    label?: string;
-    options?: SelectOption<T>[];
-    value?: T;
-    onChange?: (value: T) => void;
-    readonly?: boolean;
+    className?: string
+    label?: string
+    options?: SelectOption<T>[]
+    value?: T
+    onChange?: (value: T) => void
+    readonly?: boolean
 }
 
 export const Select = <T extends string>(props: SelectProps<T>) => {

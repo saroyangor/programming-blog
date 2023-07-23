@@ -13,9 +13,9 @@ import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {
-    className?: string;
-    comment?: Comment;
-    isLoading?: boolean;
+    className?: string
+    comment?: Comment
+    isLoading?: boolean
 }
 
 export const CommentCard = memo((props: CommentCardProps) => {
