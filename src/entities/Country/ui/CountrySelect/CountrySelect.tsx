@@ -38,7 +38,7 @@ export const CountrySelect = memo(({
       label={t('Ваша страна')}
       items={options}
       readonly={readonly}
-      direction="top"
+      direction="top right"
     />
   );
 });
