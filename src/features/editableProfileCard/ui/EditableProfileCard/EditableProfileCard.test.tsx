@@ -5,7 +5,6 @@ import { componentRender } from '@/shared/lib/tests/componentRender';
 import { Profile } from '@/entities/Profile';
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
-import { $api } from '@/shared/api';
 
 import { profileReducer } from '../../model/slice/profileSlice';
 
