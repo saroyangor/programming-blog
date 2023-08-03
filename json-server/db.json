@@ -529,6 +529,12 @@
       "userId": "1",
       "text": "Hi",
       "id": "smjdwJw"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "Hello",
+      "id": "jEYVNAu"
     }
   ],
   "users": [
@@ -536,21 +542,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobid0.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
