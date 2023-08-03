@@ -89,13 +89,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
       {({
         height,
         width,
-        registerChild,
         onChildScroll,
         isScrolling,
         scrollTop,
       }) => (
         <div
-          ref={registerChild}
           className={classNames(cls.ArticleList, [className, cls[view]])}
         >
           {virtualized
