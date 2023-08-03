@@ -1,9 +1,8 @@
 import { CombinedState, configureStore, ReducersMapObject, Reducer } from '@reduxjs/toolkit';
-import { To } from 'history';
-import { NavigateOptions } from 'react-router';
 
 import { userReducer } from '@/entities/User';
-import { $api } from '@/shared/api/api';
+import { $api } from '@/shared/api';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { uiReducer } from '@/features/UI';
 
 import { StateSchema, ThunkExtraArg } from './StateSchema';
@@ -17,6 +16,7 @@ export function createReduxStore(
     ...asyncReducers,
     user: userReducer,
     ui: uiReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -33,7 +33,7 @@ export function createReduxStore(
       thunk: {
         extraArgument,
       },
-    }),
+    }).concat(rtkApi.middleware),
   });
 
   // @ts-ignore

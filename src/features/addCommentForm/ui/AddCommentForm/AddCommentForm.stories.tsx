@@ -16,10 +16,10 @@ export default {
 
 const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />;
 
-export const Normal = Template.bind({});
-Normal.args = {
+export const Default = Template.bind({});
+Default.args = {
   onSendComment: action('onSendComment'),
 };
-Normal.decorators = [
+Default.decorators = [
   StoreDecorator({}),
 ];
