@@ -2,5 +2,6 @@ export {
   AppRoutes,
   RoutePath,
   routeConfig,
-  AppRoutesProps,
 } from './routeConfig';
+
+export type { AppRoutesProps } from './routeConfig';

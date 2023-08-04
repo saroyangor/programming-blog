@@ -1,1 +1,2 @@
-export { componentRender, componentRenderOptions } from './componentRender';
+export { componentRender } from './componentRender';
+export type { componentRenderOptions } from './componentRender';

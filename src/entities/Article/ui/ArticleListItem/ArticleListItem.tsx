@@ -11,8 +11,9 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { RoutePath } from '@/shared/config/routeConfig';
 import { AppLink } from '@/shared/ui/AppLink';
 
+import { ArticleBlockType, ArticleView } from '../../model/const/const';
 import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+  Article, ArticleTextBlock,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 

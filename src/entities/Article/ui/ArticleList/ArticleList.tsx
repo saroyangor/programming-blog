@@ -8,7 +8,8 @@ import { PAGE_ID } from '@/widgets/Page';
 
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
+import { ArticleView } from '../../model/const/const';
 
 import cls from './ArticleList.module.scss';
 
